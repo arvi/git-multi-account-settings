@@ -1,0 +1,14 @@
+[core]
+    excludesfile = /Users/namehere/.gitignore_global
+
+[includeIf "gitdir:/Users/namehere/Work/"]
+	path = ~/.gitconfig.work
+
+[includeIf "gitdir:/Users/namehere/Personal/"]
+	path = ~/.gitconfig.personal
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
